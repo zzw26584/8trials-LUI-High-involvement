@@ -6,8 +6,8 @@ import ProductCard from './HotelCard';
 
 interface ChatInterfaceProps {
   task: TrialTask;
-  trialNumber: number; // 新增：当前试次序号
-  totalTrials: number; // 新增：总试次数
+  trialNumber: number;
+  totalTrials: number;
   onFirstMessage: () => void;
   onFinalSelection: (product: Product, interactionCount: number) => void;
 }
@@ -53,12 +53,33 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
     const recommendation = await getHotelRecommendation(inputValue, task.products, task.instruction, task.objectCount);
     
     if (recommendation) {
-      const candidates = task.products.filter(p => recommendation.candidates.includes(p.id));
+      // ---------------------------------------------------------
+      // 核心修改逻辑：确保严格展示 2 个商品
+      // ---------------------------------------------------------
+      
+      // 1. 获取 AI 推荐的商品列表
+      let candidateProducts = task.products.filter(p => recommendation.candidates.includes(p.id));
+
+      // 2. 如果少于 2 个（例如 AI 只推荐了 1 个，或者 ID 匹配失败），从剩余商品中补齐
+      if (candidateProducts.length < 2) {
+        const remainingProducts = task.products.filter(p => !candidateProducts.includes(p));
+        // 优先补充剩余商品中的前几个，凑够 2 个
+        const needed = 2 - candidateProducts.length;
+        candidateProducts = [...candidateProducts, ...remainingProducts.slice(0, needed)];
+      }
+
+      // 3. 如果多于 2 个，截取前 2 个
+      if (candidateProducts.length > 2) {
+        candidateProducts = candidateProducts.slice(0, 2);
+      }
+      
+      // ---------------------------------------------------------
+
       const aiMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
         content: recommendation.analysis,
-        suggestedProducts: candidates,
+        suggestedProducts: candidateProducts, // 这里现在始终是 2 个商品
         recommendationId: recommendation.recommendationId,
         analysis: recommendation.recommendationSlogan
       };
@@ -88,7 +109,6 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
             <p className="text-xs opacity-75">正在为您进行深度权衡对比</p>
           </div>
         </div>
-        {/* 修改处：将任务 ID 替换为 X/Y 进度显示 */}
         <div className="px-4 py-1.5 bg-white/20 rounded-full text-sm font-black backdrop-blur-md border border-white/10">
           {trialNumber} / {totalTrials}
         </div>
@@ -120,7 +140,10 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
                 <div className="mt-6 space-y-4">
                   <div className="flex items-center gap-2">
                     <div className="h-px bg-gray-200 flex-grow"></div>
-                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">备选方案</span>
+                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                      {/* 动态显示数量，理论上这里总是 2 */}
+                      备选方案 (Top {msg.suggestedProducts.length})
+                    </span>
                     <div className="h-px bg-gray-200 flex-grow"></div>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
