@@ -62,7 +62,7 @@ export const TRIALS: TrialTask[] = [
     products: [
       { id: 'p1', name: '华为 Mate 50E', price: 3999, rating: 4.7, imageUrl: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400', summary: '昆仑玻璃，应急模式，信号强', attributes: [{ label: '内存', value: '256GB' }, { label: '颜色', value: '黑色' }] },
       { id: 'p2', name: '小米 13', price: 3299, rating: 4.6, imageUrl: 'https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400', summary: '徕卡光学镜头，小屏手感佳', attributes: [{ label: '内存', value: '512GB' }, { label: '颜色', value: '白色' }] },
-      { id: 'p3', name: 'iPhone 13', price: 4699, rating: 4.8, imageUrl: 'https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400', summary: 'A15芯片，色彩还原真实', attributes: [{ label: '内存', value: '512GB' }, { label: '颜色', value: '黑色' }] },
+      { id: 'p3', name: 'iPhone 13', price: 5699, rating: 4.8, imageUrl: 'https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400', summary: 'A15芯片，色彩还原真实', attributes: [{ label: '内存', value: '512GB' }, { label: '颜色', value: '黑色' }] },
       { id: 'p4', name: '一加 11', price: 3899, rating: 4.5, imageUrl: 'https://images.unsplash.com/photo-1678911820864-e2c567c655d7?w=400', summary: '哈苏影像，顶级震感马达', attributes: [{ label: '内存', value: '1TB' }, { label: '颜色', value: '黑色' }] }
     ]
   },
