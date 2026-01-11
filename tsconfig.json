@@ -17,6 +17,7 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
+    "env.d.ts",
     "src",
     "components",
     "services",
