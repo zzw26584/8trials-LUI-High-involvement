@@ -1,1 +1,5 @@
-// 类型定义已移动至根目录 env.d.ts
+declare namespace NodeJS {
+  interface ProcessEnv {
+    API_KEY: string;
+  }
+}

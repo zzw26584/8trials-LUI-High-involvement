@@ -88,11 +88,11 @@ export const TRIALS: TrialTask[] = [
     instruction: "假如现在你计划为父母购置一份退休年金险。请选择收益率超过6.0%、起领年龄≥55岁、包含身故保险金评估的保险。",
     reminder: "收益>6.0%，起领≥55岁，含身故评估。",
     products: [
-      { id: 'f3', name: '泰康 幸福年', price: 100000, rating: 4.7, imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400', summary: '养老社区权益，稳健收益', attributes: [{ label: '年化', value: '3.5%' }, { label: '起领', value: '60岁' }, { label: '身故金', value: '不含' }] },
-      { id: 'f4', name: '友邦 充裕', price: 100000, rating: 4.8, imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400', summary: '全球配置，美元收益', attributes: [{ label: '年化', value: '6.2%' }, { label: '起领', value: '65岁' }, { label: '身故金', value: '含' }] },
-      { id: 'f5', name: '平安 尊享', price: 100000, rating: 4.6, imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400', summary: '国民大品牌，理赔有保障', attributes: [{ label: '年化', value: '4.0%' }, { label: '起领', value: '60岁' }, { label: '身故金', value: '含' }] },
-      { id: 'f6', name: '人寿 鑫裕', price: 100000, rating: 4.5, imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400', summary: '国资背景，安全第一', attributes: [{ label: '年化', value: '6.5%' }, { label: '起领', value: '55岁' }, { label: '身故金', value: '含' }] },
-      { id: 'f7', name: '中宏 乐享', price: 100000, rating: 4.4, imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400', summary: '灵活支取，高流动性', attributes: [{ label: '年化', value: '7.1%' }, { label: '起领', value: '55岁' }, { label: '身故金', value: '不含' }] }
+      { id: 'f1', name: '泰康 幸福年', price: 100000, rating: 4.7, imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400', summary: '养老社区权益，稳健收益', attributes: [{ label: '年化', value: '3.5%' }, { label: '起领', value: '60岁' }, { label: '身故金', value: '不含' }] },
+      { id: 'f2', name: '友邦 充裕', price: 100000, rating: 4.8, imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400', summary: '全球配置，美元收益', attributes: [{ label: '年化', value: '6.2%' }, { label: '起领', value: '65岁' }, { label: '身故金', value: '含' }] },
+      { id: 'f3', name: '平安 尊享', price: 100000, rating: 4.6, imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400', summary: '国民大品牌，理赔有保障', attributes: [{ label: '年化', value: '4.0%' }, { label: '起领', value: '60岁' }, { label: '身故金', value: '含' }] },
+      { id: 'f4', name: '人寿 鑫裕', price: 100000, rating: 4.5, imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400', summary: '国资背景，安全第一', attributes: [{ label: '年化', value: '6.5%' }, { label: '起领', value: '55岁' }, { label: '身故金', value: '含' }] },
+      { id: 'f5', name: '中宏 乐享', price: 100000, rating: 4.4, imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400', summary: '灵活支取，高流动性', attributes: [{ label: '年化', value: '7.1%' }, { label: '起领', value: '55岁' }, { label: '身故金', value: '不含' }] }
     ]
   },
   {
